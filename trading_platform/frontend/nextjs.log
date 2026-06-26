@@ -1,0 +1,48 @@
+
+> frontend@0.1.0 dev
+> next dev -p 3000
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 822ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+○ Compiling / ...
+ GET / 200 in 5.9s (next.js: 5.4s, application-code: 453ms)
+[browser] Uncaught TypeError: chart.addCandlestickSeries is not a function
+    at TradingChart.useEffect (components/TradingChart.tsx:26:41)
+    at Dashboard (app/page.tsx:50:14)
+  24 |         });
+  25 |
+> 26 |         const candlestickSeries = chart.addCandlestickSeries({
+     |                                         ^
+  27 |             upColor: '#22c55e',
+  28 |             downColor: '#ef4444',
+  29 |             borderVisible: false,
+ GET / 200 in 67ms (next.js: 10ms, application-code: 57ms)
+[browser] Uncaught ReferenceError: CandlestickSeries is not defined
+    at TradingChart.useEffect (components/TradingChart.tsx:26:51)
+    at Dashboard (app/page.tsx:50:14)
+  24 |         });
+  25 |
+> 26 |         const candlestickSeries = chart.addSeries(CandlestickSeries, {
+     |                                                   ^
+  27 |             upColor: '#22c55e',
+  28 |             downColor: '#ef4444',
+  29 |             borderVisible: false,
+ GET / 200 in 68ms (next.js: 5ms, application-code: 62ms)
+[browser] Failed to add candlestick series TypeError: chart.addCandlestickSeries is not a function
+    at TradingChart.useEffect (components/TradingChart.tsx:30:45)
+    at Dashboard (app/page.tsx:50:14)
+  28 |         try {
+  29 |             // @ts-ignore
+> 30 |             const candlestickSeries = chart.addCandlestickSeries({
+     |                                             ^
+  31 |                 upColor: '#22c55e',
+  32 |                 downColor: '#ef4444',
+  33 |                 borderVisible: false, (components/TradingChart.tsx:39:21)
